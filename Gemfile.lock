@@ -161,14 +161,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capybara
+  capybara (~> 2.18.0)
   dotenv (~> 2.0)
   hanami (~> 1.1)
   hanami-model (~> 1.1)
-  pg
-  rake
-  rspec
-  shotgun
+  pg (~> 1.0.0)
+  rake (~> 12.3.0)
+  rspec (~> 3.7.0)
+  shotgun (~> 0.9.2)
 
 BUNDLED WITH
    1.16.0
