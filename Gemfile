@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bcrypt', '~> 3.1.11'
 gem 'hanami',       '~> 1.1'
 gem 'hanami-model', '~> 1.1'
 gem 'i18n', '~> 1.0.0'
@@ -14,6 +15,7 @@ end
 
 group :test, :development do
   gem 'dotenv', '~> 2.0'
+  gem 'pry', '~> 0.11.3'
 end
 
 group :test do
