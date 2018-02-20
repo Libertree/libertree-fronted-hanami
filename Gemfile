@@ -19,8 +19,10 @@ group :test, :development do
 end
 
 group :test do
-  gem 'rspec', '~> 3.7.0'
   gem 'capybara', '~> 2.18.0'
+  gem 'database_cleaner', '~> 1.6.2'
+  gem 'factory_bot', '~> 4.8.2'
+  gem 'rspec', '~> 3.7.0'
 end
 
 group :production do
