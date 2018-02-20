@@ -18,7 +18,7 @@ module Web
     private def current_account
       return @_current_account   if @_current_account
 
-      session_account = SessionAccountRepository.new.find_by_session_id(session.id)
+      session_account = SessionAccountRepository.new.find_by_session_id(session['session_id'])
       if session_account
         @_current_account = AccountRepository.new.find(session_account.account_id)
       end
