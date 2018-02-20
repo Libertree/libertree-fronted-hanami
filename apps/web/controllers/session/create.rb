@@ -16,5 +16,9 @@ module Web::Controllers::Session
         redirect_to routes.sign_in_path
       end
     end
+
+    private def authenticate!
+      # skip authentication
+    end
   end
 end

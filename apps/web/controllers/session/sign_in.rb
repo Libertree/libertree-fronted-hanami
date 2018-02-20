@@ -4,5 +4,9 @@ module Web::Controllers::Session
 
     def call(params)
     end
+
+    private def authenticate!
+      # skip authentication
+    end
   end
 end
