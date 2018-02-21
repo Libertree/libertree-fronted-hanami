@@ -68,8 +68,8 @@ RSpec.configure do |config|
   config.before(:suite) do
     FactoryBot.find_definitions
 
-    DatabaseCleaner.strategy = :truncation
     DatabaseCleaner.clean_with(:truncation)
+    DatabaseCleaner.strategy = :transaction
   end
 
   config.around(:each) do |example|
