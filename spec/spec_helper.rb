@@ -1,6 +1,17 @@
 # Require this file for unit tests
 ENV['HANAMI_ENV'] ||= 'test'
 
+########################
+# FIXME: Sequel wants us to connect to the db before defining models.  As model
+# definitions are loaded when 'libertree/model' is required, we have to do
+# this first.
+require 'libertree/db'
+Libertree::DB.load_config "#{File.dirname( __FILE__ ) }/../config/database.yaml"
+Libertree::DB.dbh
+########################
+
+require 'libertree/model'
+
 require_relative '../config/environment'
 Hanami.boot
 Hanami::Utils.require!("#{__dir__}/support")
@@ -63,13 +74,7 @@ RSpec.configure do |config|
   end
 end
 
-FactoryBot.define do
-  initialize_with do
-    new.create(attributes)
-  end
-
-  to_create do |instance|
-    # Do nothing, because the instance should already have been saved at build
-    # time by the Hanami repository
-  end
+# So that FactoryBot can be used with Sequel
+class Sequel::Model
+  alias_method :save!, :save
 end

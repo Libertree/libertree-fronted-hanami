@@ -16,12 +16,9 @@ module Web
     end
 
     private def current_account
-      return @_current_account   if @_current_account
-
-      session_account = SessionAccountRepository.new.find_by_session_id(session['session_id'])
-      if session_account
-        @_current_account = AccountRepository.new.find(session_account.account_id)
-      end
+      @_current_account ||= Libertree::Model::SessionAccount[
+        sid: session['session_id']
+      ]&.account
     end
   end
 end

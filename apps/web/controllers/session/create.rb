@@ -3,13 +3,14 @@ module Web::Controllers::Session
     include Web::Action
 
     def call(params)
-      account = AccountRepository.new.find_by_creds(
-        creds: params.raw.slice('username', 'password')
+      account = Libertree::Model::Account.authenticate(
+        params.raw.slice('username', 'password')
       )
+
       if account
-        SessionAccountRepository.new.ensure_exists(
+        Libertree::Model::SessionAccount.find_or_create(
           sid: session.id,
-          account_id: account.id,
+          account_id: account.id
         )
         redirect_to routes.home_path
       else

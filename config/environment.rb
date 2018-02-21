@@ -15,3 +15,5 @@ Hanami.configure do
     logger level: :info, formatter: :json, filter: []
   end
 end
+
+Libertree::Model::Account.set_auth_settings(:default, nil)
