@@ -1,5 +1,11 @@
+<p>
+Signed in: <%= current_account.username %>
+</p>
+
 <h1>Home</h1>
 
-<p>
-<%= current_account.username %>
-</p>
+<% posts.each do |post| %>
+  <p>
+    <%= post.text %>
+  </p>
+<% end %>
