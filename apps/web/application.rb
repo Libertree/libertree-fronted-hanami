@@ -2,6 +2,7 @@ require 'hanami/helpers'
 require 'hanami/assets'
 
 require_relative './controllers/authentication'
+require_relative '../../lib/libertree/rendering'
 
 module Web
   class Application < Hanami::Application
