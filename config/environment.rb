@@ -27,3 +27,7 @@ Hanami.configure do
 end
 
 Libertree::Model::Account.set_auth_settings(:default, nil)
+
+$conf = YAML.load( File.read(Hanami.root.join("config/application.yaml")) )
+$conf['websocket_blacklist'] ||= []
+ENV['RACK_ENV'] = $conf['environment'] || 'live'

@@ -1,4 +1,5 @@
 .bundle
+config/application.yaml
 config/database.yaml
 /public/assets*
 /tmp
