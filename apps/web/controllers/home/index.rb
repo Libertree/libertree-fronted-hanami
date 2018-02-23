@@ -2,10 +2,9 @@ module Web::Controllers::Home
   class Index
     include Web::Action
 
-    expose :current_account, :posts
+    expose :current_account
 
     def call(params)
-      @posts = current_account.home_river.posts
     end
   end
 end

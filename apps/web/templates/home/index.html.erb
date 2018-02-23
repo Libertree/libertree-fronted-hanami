@@ -4,8 +4,6 @@ Signed in: <%= current_account.username %>
 
 <h1>Home</h1>
 
-<% posts.each do |post| %>
-  <p>
-    <%= post.text %>
-  </p>
-<% end %>
+<p>
+<%= num_unread %> unread posts
+</p>
