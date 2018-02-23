@@ -8,7 +8,10 @@ module Web
     end
 
     private def authenticate!
-      halt 401  if ! authenticated?
+      if ! authenticated?
+        flash[:error] = "Please sign in."
+        redirect_to routes.sign_in_path
+      end
     end
 
     private def authenticated?
