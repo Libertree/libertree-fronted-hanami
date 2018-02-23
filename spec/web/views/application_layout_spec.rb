@@ -5,7 +5,7 @@ RSpec.describe Web::Views::ApplicationLayout, type: :view do
   let(:rendered) { layout.render }
   let(:template) { Hanami::View::Template.new('apps/web/templates/application.html.erb') }
 
-  it 'contains application name' do
-    expect(rendered).to include('Libertre')
+  it 'contains the application name' do
+    expect(rendered).to include('Libertree')
   end
 end
