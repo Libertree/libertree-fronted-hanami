@@ -12,9 +12,9 @@ module Web::Controllers::Session
           sid: session.id,
           account_id: account.id
         )
-        redirect_to routes.home_path
+        redirect_to routes.path(:home)
       else
-        redirect_to routes.sign_in_path
+        redirect_to routes.path(:sign_in)
       end
     end
 

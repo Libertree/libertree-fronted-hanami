@@ -10,7 +10,7 @@ module Web
     private def authenticate!
       if ! authenticated?
         flash[:error] = "Please sign in."
-        redirect_to routes.sign_in_path
+        redirect_to routes.path(:sign_in)
       end
     end
 
