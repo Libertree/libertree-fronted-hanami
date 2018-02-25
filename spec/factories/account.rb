@@ -6,6 +6,7 @@ FactoryBot.define do
 
     after(:create) do |account, _|
       FactoryBot.create(:member, account_id: account.id)
+      FactoryBot.create(:account_settings, account_id: account.id)
     end
   end
 end

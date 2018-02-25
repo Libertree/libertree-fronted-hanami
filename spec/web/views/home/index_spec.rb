@@ -1,5 +1,18 @@
 RSpec.describe Web::Views::Home::Index, type: :view do
   let(:account) { FactoryBot.create(:account) }
+  let!(:river) {
+    FactoryBot.create(
+      :river,
+      account_id: account.id,
+      home: true,
+    )
+  }
+  let(:num_unread) { 642 }
+
+  before do
+    allow_any_instance_of(Libertree::Model::River).to receive(:num_unread).and_return(num_unread)
+  end
+
   let(:post) {
     FactoryBot.create(
       :post,
@@ -25,7 +38,7 @@ RSpec.describe Web::Views::Home::Index, type: :view do
     expect(rendered).to include account.username
   end
 
-  it 'shows the text of the posts' do
-    expect(rendered).to include post.text
+  it 'shows the number of unread posts' do
+    expect(rendered).to include num_unread.to_s
   end
 end
