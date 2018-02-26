@@ -5,5 +5,8 @@ Signed in: <%= current_account.username %>
 <h1>Home</h1>
 
 <p>
-<%= num_unread %> unread posts
+  <%= num_unread %> unread posts
+</p>
+<p>
+  <a href="<%= routes.path(:post_latest_unread) %>">begin reading unread posts</a>
 </p>
