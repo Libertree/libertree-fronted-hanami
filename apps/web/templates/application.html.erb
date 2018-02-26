@@ -53,12 +53,10 @@
           <a
             href="<%= routes.path(:post_latest_unread) %>"
             title="read the latest unread post"
-          >unread posts</a>
+          >latest unread</a>
           <span>Signed in as <%= current_account.username %></span>
           <a href="<%= routes.path(:sign_out) %>">sign out</a>
         </nav>
-
-
       <% end %>
     </header>
     <main>
