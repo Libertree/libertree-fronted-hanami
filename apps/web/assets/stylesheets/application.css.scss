@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("assets/SourceSansPro-Regular.otf") format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("assets/SourceSansPro-It.otf") format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("assets/SourceSansPro-Bold.otf") format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("assets/SourceSansPro-BoldIt.otf") format('opentype');
+  font-weight: bold;
+  font-style: italic;
+}
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+}
+
+/* primary colour: #33d83e */
+/* secondary colour: #1b4b1e */
+/* background colour: #f7f9fa */

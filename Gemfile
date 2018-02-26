@@ -8,6 +8,7 @@ gem 'libertree-model', git: 'git://github.com/Libertree/libertree-model-rb.git',
 gem 'nokogiri', '~> 1.8.2'
 gem 'pg', '~> 1.0.0'
 gem 'rake', '~> 12.3.0'
+gem 'sass', '~> 3.5.5'
 
 group :development do
   # Code reloading
