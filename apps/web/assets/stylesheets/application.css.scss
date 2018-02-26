@@ -1,3 +1,5 @@
+@import 'colours.css.scss';
+
 @font-face {
   font-family: "Source Sans Pro";
   src: url("SourceSansPro-Regular.otf") format('opentype');
@@ -22,11 +24,13 @@
   font-weight: bold;
   font-style: italic;
 }
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 20px;
+  background-color: $background_colour;
 }
 
-/* primary colour: #33d83e */
-/* secondary colour: #1b4b1e */
-/* background colour: #f7f9fa */
+a {
+  color: $primary_colour;
+}
