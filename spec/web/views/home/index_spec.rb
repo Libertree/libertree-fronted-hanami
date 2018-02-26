@@ -34,10 +34,6 @@ RSpec.describe Web::Views::Home::Index, type: :view do
     expect(rendered).to match /Home/
   end
 
-  it "shows the account's username" do
-    expect(rendered).to include account.username
-  end
-
   it 'shows the number of unread posts' do
     expect(rendered).to include num_unread.to_s
   end

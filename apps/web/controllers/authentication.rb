@@ -18,10 +18,20 @@ module Web
       current_account
     end
 
-    private def current_account
-      @_current_account ||= Libertree::Model::SessionAccount[
+    private def current_session
+      Libertree::Model::SessionAccount[
         sid: session['session_id']
-      ]&.account
+      ]
+    end
+
+    private def sign_out_current_account
+      current_session&.delete
+      flash[:success] = "Signed out."
+      redirect_to routes.path(:sign_in)
+    end
+
+    private def current_account
+      @_current_account ||= current_session&.account
     end
   end
 end

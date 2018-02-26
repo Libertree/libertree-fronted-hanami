@@ -3,6 +3,8 @@ RSpec.shared_context "[signed in]" do
   let(:session) { {'session_id' => session_account.sid} }
 
   before do
-    allow(action).to receive(:session).and_return(session)
+    if defined? action
+      allow(action).to receive(:session).and_return(session)
+    end
   end
 end

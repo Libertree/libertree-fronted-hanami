@@ -41,14 +41,25 @@
           <%= flash[:error] %>
         </div>
       <% end %>
+      <% if flash[:success] %>
+        <div>
+          <%= flash[:success] %>
+        </div>
+      <% end %>
 
-      <nav aria-label="Navigation">
-        <a href="<%= routes.path(:home) %>">home</a>
-        <a
-          href="<%= routes.path(:post_latest_unread) %>"
-          title="read the latest unread post"
-        >unread posts</a>
-      </nav>
+      <% if current_account %>
+        <nav aria-label="Navigation">
+          <a href="<%= routes.path(:home) %>">home</a>
+          <a
+            href="<%= routes.path(:post_latest_unread) %>"
+            title="read the latest unread post"
+          >unread posts</a>
+          <span>Signed in as <%= current_account.username %></span>
+          <a href="<%= routes.path(:sign_out) %>">sign out</a>
+        </nav>
+
+
+      <% end %>
     </header>
     <main>
       <%= yield %>
