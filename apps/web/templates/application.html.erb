@@ -35,11 +35,23 @@
     </style>
   </head>
   <body>
-    <% if flash[:error] %>
-    <div>
-      <%= flash[:error] %>
-    </div>
-    <% end %>
-    <%= yield %>
+    <header>
+      <% if flash[:error] %>
+        <div>
+          <%= flash[:error] %>
+        </div>
+      <% end %>
+
+      <nav aria-label="Navigation">
+        <a href="<%= routes.path(:home) %>">home</a>
+        <a
+          href="<%= routes.path(:post_latest_unread) %>"
+          title="read the latest unread post"
+        >unread posts</a>
+      </nav>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
