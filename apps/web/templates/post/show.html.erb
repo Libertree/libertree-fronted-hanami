@@ -12,6 +12,7 @@
     </address>
     <div class="post-tools">
       <a href="<%= routes.path(:post_like, post_id: post.id) %>" title="like this post">like</a>
+      <a href="<%= routes.path(:post_unlike, post_id: post.id) %>" title="unlike this post">unlike</a>
     </div>
   </header>
   <%= post.text_rendered(current_account) %>

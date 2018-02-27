@@ -15,3 +15,4 @@ en:
     seconds: "seconds ago"
   post:
     liked: "Post liked."
+    unliked: "Post unliked."
