@@ -1,4 +1,5 @@
 @import 'colours.css.scss';
+@import 'constrained-text-block.css.scss';
 
 @font-face {
   font-family: "Source Sans Pro";
@@ -23,14 +24,6 @@
   src: url("SourceSansPro-BoldIt.otf") format('opentype');
   font-weight: bold;
   font-style: italic;
-}
-
-$max_text_width: 40rem;
-
-@mixin constrained_text_block {
-  max-width: $max_text_width;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 $base_font_size: 22px;
