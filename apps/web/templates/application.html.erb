@@ -9,25 +9,27 @@
   <body>
     <header>
       <% if flash[:error] %>
-        <div>
+        <div class="user-message error">
           <%= flash[:error] %>
         </div>
       <% end %>
       <% if flash[:success] %>
-        <div>
+        <div class="user-message success">
           <%= flash[:success] %>
         </div>
       <% end %>
 
       <% if current_account %>
-        <nav aria-label="Navigation">
-          <a href="<%= routes.path(:home) %>">home</a>
-          <a
-            href="<%= routes.path(:post_latest_unread) %>"
-            title="read the latest unread post"
-          >latest unread</a>
-          <span>Signed in as <%= current_account.username %></span>
-          <a href="<%= routes.path(:sign_out) %>">sign out</a>
+        <nav id="nav" aria-label="Navigation">
+          <ul>
+            <li><a href="<%= routes.path(:home) %>">home</a><li>
+            <li><a
+              href="<%= routes.path(:post_latest_unread) %>"
+              title="read the latest unread post"
+            >latest unread</a></li>
+            <li><span>Signed in as <%= current_account.username %></span></li>
+            <li><a href="<%= routes.path(:sign_out) %>">sign out</a></li>
+          </ul>
         </nav>
       <% end %>
     </header>

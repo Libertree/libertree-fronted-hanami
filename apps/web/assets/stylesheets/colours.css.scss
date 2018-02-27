@@ -1,10 +1,10 @@
-$sand: #f0e7ce;
 $light_taupe: #a39366;
 $lime_green: #42c44b;
 $lincoln_green: #196b1f;
 $medium_ruby: #aa4465;
 $olive_drab: #3d3726;
 $pine_green: #1b4b1e;
+$sand: #f0e7ce;
 $white_smoke: #f7faf7;
 
 $primary_colour: $lincoln_green;
@@ -14,3 +14,6 @@ $lighter_secondary_colour: $light_taupe;
 $very_light_secondary_colour: $sand;
 $tertiary_colour: $pine_green;
 $background_colour: $white_smoke;
+$error_colour: $medium_ruby;
+$contrasting_error_colour: white;
+$contrasting_lighter_primary_colour: black;
