@@ -52,10 +52,16 @@ body {
 }
 
 #nav {
-  background-color: $very_light_secondary_colour;
+  background-color: $primary_colour;
+  color: white;
   padding: 0.8rem;
   line-height: 1.5em;
   font-size: 0.8em;
+
+  a {
+    color: $contrasting_primary_colour;
+    text-decoration-color: transparentize($contrasting_primary_colour, 0.5);
+  }
 
   ul {
     margin: 0;
@@ -101,5 +107,5 @@ article :first-child {
 
 a {
   color: $primary_colour;
-  text-decoration-color: transparentize($primary_colour, 0.7);
+  text-decoration-color: transparentize($primary_colour, 0.5);
 }

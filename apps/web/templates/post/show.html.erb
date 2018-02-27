@@ -1,13 +1,15 @@
 <%= stylesheet 'post' %>
 
 <article class="post">
-  <address>
-    <div class="member-name">
-      <%= post.member.name_display %>
-    </div>
-    <div class="post-stats">
-      <time datetime="<%= post.time_created %>"><%= ago(post.time_created) %></time>
-    </div>
-  </address>
+  <header>
+    <address>
+      <div class="member-name">
+        <%= post.member.name_display %>
+      </div>
+      <div class="post-stats">
+        <time datetime="<%= post.time_created %>"><%= ago(post.time_created) %></time>
+      </div>
+    </address>
+  </header>
   <%= post.text_rendered(current_account) %>
 </article>

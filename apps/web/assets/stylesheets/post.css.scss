@@ -1,9 +1,17 @@
-article.post {
-  address {
-    font-style: normal;
+@import 'colours.css.scss';
 
-    .member-name {
-      font-weight: bold;
+article.post {
+  header {
+    background-color: $very_light_secondary_colour;
+    color: $contrasting_lighter_secondary_colour;
+    padding: 1.5em;
+
+    address {
+      font-style: normal;
+
+      .member-name {
+        font-weight: bold;
+      }
     }
   }
 }
