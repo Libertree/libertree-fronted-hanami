@@ -2,3 +2,14 @@ en:
   Password: Password
   "Sign In": "Sign In"
   Username: Username
+  ago:
+    num_days:
+      one: "1 day ago"
+      other: "%{count} days ago"
+    num_hours:
+      one: "1 hour ago"
+      other: "%{count} hours ago"
+    num_minutes:
+      one: "1 minute ago"
+      other: "%{count} minutes ago"
+    seconds: "seconds ago"
