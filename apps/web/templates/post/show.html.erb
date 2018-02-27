@@ -1,3 +1,10 @@
-<article>
-<%= post.text_rendered(current_account) %>
+<%= stylesheet 'post' %>
+
+<article class="post">
+  <address>
+    <div class="member-name">
+      <%= post.member.name_display %>
+    </div>
+  </address>
+  <%= post.text_rendered(current_account) %>
 </article>
