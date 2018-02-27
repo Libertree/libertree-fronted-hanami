@@ -13,3 +13,5 @@ en:
       one: "1 minute ago"
       other: "%{count} minutes ago"
     seconds: "seconds ago"
+  post:
+    liked: "Post liked."

@@ -6,10 +6,14 @@ module Web::Controllers::PostLike
       post = Libertree::Model::Post[params[:post_id].to_i]
 
       if post
-        Libertree::Model::PostLike.find_or_create(
+        like = Libertree::Model::PostLike.find_or_create(
           member_id: current_account.member.id,
           post_id:   post.id,
         )
+
+        if like
+          flash[:success] = I18n.t('post.liked')
+        end
 
         redirect_to routes.path(:post, id: post.id)
       else

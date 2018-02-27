@@ -1,6 +1,7 @@
 RSpec.describe Web::Controllers::PostLike::Create, type: :action do
   let(:action) { described_class.new }
   let(:call) { action.call(params) }
+  let(:flash) { action.exposures[:flash] }
 
   include_context '[signed in]' do
     let(:current_account) { FactoryBot.create(:account) }
@@ -19,6 +20,12 @@ RSpec.describe Web::Controllers::PostLike::Create, type: :action do
           }.to change {
             Libertree::Model::PostLike.where(post_id: post.id).count
           }.by(1)
+        end
+
+        it 'sets a success flash message' do
+          call
+
+          expect(flash[:success]).to match(/post liked/i)
         end
 
         it 'redirects to the post' do

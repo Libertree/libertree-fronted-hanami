@@ -10,6 +10,9 @@
         <time datetime="<%= post.time_created %>"><%= ago(post.time_created) %></time>
       </div>
     </address>
+    <div class="post-tools">
+      <a href="<%= routes.path(:post_like, post_id: post.id) %>" title="like this post">like</a>
+    </div>
   </header>
   <%= post.text_rendered(current_account) %>
 </article>

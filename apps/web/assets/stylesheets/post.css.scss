@@ -5,13 +5,22 @@ article.post {
     background-color: $very_light_secondary_colour;
     color: $contrasting_lighter_secondary_colour;
     padding: 1.5em;
+    display: flex;
+    justify-content: space-between;
 
     address {
+      margin: 0;
       font-style: normal;
+      flex-grow: 1;
 
       .member-name {
         font-weight: bold;
       }
+    }
+
+    .post-tools {
+      margin: 0;
+      flex-grow: 1;
     }
   }
 }
