@@ -1,0 +1,8 @@
+<%= stylesheet 'user-message' %>
+
+<div class="user-message <%= type %>">
+  <div class="inner">
+    <%= flash[type] %>
+    <a href="" class="revisit-current" title="dismiss message">&times;</a>
+  </div>
+</div>

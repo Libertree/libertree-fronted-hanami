@@ -9,14 +9,10 @@
   <body>
     <header>
       <% if flash[:error] %>
-        <div class="user-message error">
-          <%= flash[:error] %>
-        </div>
+        <%= render partial: 'application/user-message', locals: {type: :error} %>
       <% end %>
       <% if flash[:success] %>
-        <div class="user-message success">
-          <%= flash[:success] %>
-        </div>
+        <%= render partial: 'application/user-message', locals: {type: :success} %>
       <% end %>
 
       <% if current_account %>

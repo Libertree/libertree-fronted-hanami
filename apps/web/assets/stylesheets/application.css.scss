@@ -68,20 +68,6 @@ body {
   }
 }
 
-header {
-  .user-message {
-    padding: 1em;
-    &.error {
-      background-color: $error_colour;
-      color: $contrasting_error_colour;
-    }
-    &.success {
-      background-color: $lighter_primary_colour;
-      color: $contrasting_lighter_primary_colour;
-    }
-  }
-}
-
 main {
   padding: 2rem;
 

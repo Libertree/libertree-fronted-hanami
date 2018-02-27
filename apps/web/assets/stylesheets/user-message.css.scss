@@ -1,0 +1,32 @@
+@import 'colours.css.scss';
+@import 'constrained-text-block.css.scss';
+
+.user-message {
+  padding: 1em;
+
+  &.error {
+    background-color: $error_colour;
+    color: $contrasting_error_colour;
+
+    .revisit-current {
+      color: $contrasting_error_colour;
+    }
+  }
+  &.success {
+    background-color: $lighter_primary_colour;
+    color: $contrasting_lighter_primary_colour;
+
+    .revisit-current {
+      color: $contrasting_lighter_primary_colour;
+    }
+  }
+
+  .inner {
+    @include constrained_text_block;
+  }
+
+  .revisit-current {
+    float: right;
+    text-decoration: none;
+  }
+}
