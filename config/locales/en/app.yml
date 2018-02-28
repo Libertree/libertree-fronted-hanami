@@ -19,7 +19,7 @@ en:
     comment_added: "Comment added."
     comment_placeholder: "A comment may be entered here."
     liked: "Post liked."
-    "new comment": "new comment"
+    "New comment": "New comment"
     unliked: "Post unliked."
     num_comments:
       one: "1 comment"
