@@ -42,11 +42,12 @@ RSpec.describe Web::Controllers::Comment::Create, type: :action do
           expect(flash[:success]).to match(/comment added/i)
         end
 
-        it 'redirects to the post' do
+        it 'redirects to the comment' do
           response = call
+          comment = Libertree::Model::Comment.last
 
           expect(response[0]).to eq 302
-          expect(response[1]['Location']).to eq "/post/#{post.id}"
+          expect(response[1]['Location']).to eq "/post/#{post.id}#comment-#{comment.id}"
         end
       end
 

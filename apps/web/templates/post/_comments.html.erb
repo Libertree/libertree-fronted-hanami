@@ -1,7 +1,7 @@
 <%= stylesheet 'comment' %>
 
 <% post.comments.each do |comment| %>
-<article class="comment">
+<article class="comment" id="comment-<%= comment.id %>">
   <header>
     <address>
       <div class="member-name">

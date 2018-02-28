@@ -16,7 +16,7 @@ module Web::Controllers::Comment
           flash[:success] = I18n.t('post.comment_added')
         end
 
-        redirect_to routes.path(:post, id: post.id)
+        redirect_to routes.path(:post, id: post.id) + "#comment-#{comment.id}"
       else
         redirect_to routes.path(:home)
       end
