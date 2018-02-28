@@ -50,7 +50,7 @@ body {
   line-height: 1.5em;
   font-size: $font_size_smaller;
 
-  a {
+  a:not(:focus) {
     color: $contrasting_primary_colour;
     text-decoration-color: transparentize($contrasting_primary_colour, 0.5);
   }
@@ -86,4 +86,10 @@ article :first-child {
 a {
   color: $primary_colour;
   text-decoration-color: transparentize($primary_colour, 0.5);
+
+  &:focus {
+    background-color: $lighter_primary_colour;
+    color: $contrasting_lighter_primary_colour;
+    outline: none;
+  }
 }
