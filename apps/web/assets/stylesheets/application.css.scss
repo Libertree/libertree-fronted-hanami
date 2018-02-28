@@ -1,6 +1,7 @@
 @import 'colours.css.scss';
-@import 'sizes.css.scss';
 @import 'constrained-text-block.css.scss';
+@import 'focus.css.scss';
+@import 'sizes.css.scss';
 
 @font-face {
   font-family: "Source Sans Pro";
@@ -27,9 +28,13 @@
   font-style: italic;
 }
 
-html {
+@mixin font_defaults {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: $font_size_base;
+}
+
+html {
+  @include font_defaults;
   background-color: $background_colour;
 }
 @media (max-width: 900px) {
@@ -91,5 +96,33 @@ a {
     background-color: $lighter_primary_colour;
     color: $contrasting_lighter_primary_colour;
     outline: none;
+  }
+}
+
+.button-primary {
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  background-color: $primary_colour;
+  border-color: $primary_colour;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  color: $contrasting_primary_colour;
+  cursor: pointer;
+  display: block;
+  @include font_defaults;
+  font-size: $font_size_smaller;
+  font-weight: bold;
+  margin-top: 0.5em;
+  overflow: visible;
+  padding: 0.5em 1em;
+  text-align: center;
+  white-space: nowrap;
+
+  &:focus {
+    @include focus_defaults;
   }
 }

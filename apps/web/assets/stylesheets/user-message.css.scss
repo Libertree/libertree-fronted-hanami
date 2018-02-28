@@ -28,5 +28,10 @@
   .revisit-current {
     float: right;
     text-decoration: none;
+
+    &:focus {
+      background-color: $secondary_colour;
+      color: $contrasting_secondary_colour;
+    }
   }
 }

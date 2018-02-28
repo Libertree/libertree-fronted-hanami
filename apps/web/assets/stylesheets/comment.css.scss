@@ -1,4 +1,5 @@
 @import 'colours.css.scss';
+@import 'focus.css.scss';
 @import 'sizes.css.scss';
 
 article.comment {
@@ -30,8 +31,7 @@ form.comment-create {
     border: 2px solid $very_light_secondary_colour;
 
     &:focus {
-      border-color: $lighter_primary_colour;
-      outline: none;
+      @include focus_defaults;
     }
   }
 }
