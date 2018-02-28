@@ -124,6 +124,7 @@ a {
 
   &:focus {
     @include focus_defaults;
+    color: $starkly_contrasting_primary_colour;
   }
 }
 
