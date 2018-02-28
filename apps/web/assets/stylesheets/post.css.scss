@@ -1,7 +1,7 @@
 @import 'colours.css.scss';
 
 article.post {
-  header {
+  &> header {
     background-color: $very_light_secondary_colour;
     color: $contrasting_lighter_secondary_colour;
     padding: 1.5em;
@@ -22,5 +22,15 @@ article.post {
       margin: 0;
       flex-grow: 1;
     }
+  }
+
+  &> .text {
+    margin-top: 1em;
+    margin-bottom: 5em;
+  }
+
+  &> .comments {
+    background-color: $faint_primary_colour;
+    padding: 1.5em;
   }
 }

@@ -1,0 +1,23 @@
+@import 'colours.css.scss';
+@import 'sizes.css.scss';
+
+article.comment {
+  font-size: $font_size_smaller;
+  border-top: 1px dotted $secondary_colour;
+  padding-top: 0.5em;
+
+  &> header {
+    display: flex;
+    justify-content: space-between;
+
+    address {
+      margin: 0;
+      font-style: normal;
+      flex-grow: 1;
+
+      .member-name {
+        font-weight: bold;
+      }
+    }
+  }
+}

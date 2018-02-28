@@ -4,6 +4,8 @@ RSpec.describe Web::Views::Post::Show, type: :view do
   let(:exposures) {
     {
       current_account: account,
+      flash: {},
+      format: :html,
       post: post,
     }
   }
@@ -32,5 +34,23 @@ RSpec.describe Web::Views::Post::Show, type: :view do
 
   it 'has a link to unlike the post' do
     expect(dom.at(%|a[href="/post-unlike/#{post.id}"]:contains("unlike")|)).not_to be_nil
+  end
+
+  context '[the post has a comment]' do
+    let!(:comment) {
+      FactoryBot.create(
+        :comment,
+        member_id: account.member.id,
+        post_id: post.id,
+      )
+    }
+
+    it 'shows how many comments there are' do
+      expect(rendered).to include "1 comment"
+    end
+
+    it 'shows the text of the comment' do
+      expect(rendered).to include comment.text
+    end
   end
 end

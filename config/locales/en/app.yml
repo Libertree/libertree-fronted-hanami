@@ -16,3 +16,6 @@ en:
   post:
     liked: "Post liked."
     unliked: "Post unliked."
+    num_comments:
+      one: "1 comment"
+      other: "%{count} comments"

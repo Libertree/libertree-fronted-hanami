@@ -1,0 +1,18 @@
+<%= stylesheet 'comment' %>
+
+<% post.comments.each do |comment| %>
+<article class="comment">
+  <header>
+    <address>
+      <div class="member-name">
+        <%= comment.member.name_display %>
+      </div>
+      <div class="comment-stats">
+        <time datetime="<%= comment.time_created %>"><%= ago(comment.time_created) %></time>
+      </div>
+    </address>
+  </header>
+
+  <%= comment.text_rendered(current_account) %>
+</article>
+<% end %>

@@ -15,5 +15,13 @@
       <a href="<%= routes.path(:post_unlike, post_id: post.id) %>" title="unlike this post">unlike</a>
     </div>
   </header>
-  <%= post.text_rendered(current_account) %>
+
+  <div class="text">
+    <%= post.text_rendered(current_account) %>
+  </div>
+
+  <div class="comments">
+    <div class="count"><%= I18n.t('post.num_comments', count: post.comments.count) %></div>
+    <%= render partial: 'post/comments', locals: { post: post } %>
+  </div>
 </article>
