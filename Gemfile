@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'bcrypt', '~> 3.1.11'
-gem 'hanami', '~> 1.1'
+gem 'hanami', '~> 1.1.1'
 gem 'i18n', '~> 1.0.0'
 gem 'libertree-model', git: 'git://github.com/Libertree/libertree-model-rb.git', branch: 'hanami'
 # gem 'libertree-model', path: '../libertree-model-rb'
