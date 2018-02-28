@@ -6,7 +6,9 @@ module Web::Controllers::Session
     end
 
     private def authenticate!
-      # skip authentication
+      if authenticated?
+        redirect_to routes.path(:home)
+      end
     end
   end
 end
