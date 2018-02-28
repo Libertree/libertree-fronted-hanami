@@ -27,11 +27,29 @@ RSpec.describe Web::Controllers::Post::MarkUnread, type: :action do
         }.from(true).to(false)
       end
 
-      it 'redirects home' do
-        response = call
+      context '[account has a home river]' do
+        let(:river) {
+          FactoryBot.create(
+            :river,
+            account_id: current_account.id,
+            home: true,
+          )
+        }
+        let(:latest_unread_post) {
+          FactoryBot.create(:post, member_id: current_account.member.id)
+        }
 
-        expect(response[0]).to eq 302
-        expect(response[1]['Location']).to eq '/home'
+        before do
+          river.add_post(post)
+          allow_any_instance_of(Libertree::Model::River).to receive(:latest_unread).and_return(latest_unread_post)
+        end
+
+        it 'redirects to the latest unread post' do
+          response = call
+
+          expect(response[0]).to eq 302
+          expect(response[1]['Location']).to eq "/post/#{latest_unread_post.id}"
+        end
       end
     end
   end
