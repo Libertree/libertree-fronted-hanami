@@ -1,4 +1,6 @@
 en:
+  Comment: Comment
+  "Comment to Internet": "Comment to Internet"
   Password: Password
   "Sign In": "Sign In"
   Username: Username
@@ -15,6 +17,7 @@ en:
     seconds: "seconds ago"
   post:
     comment_added: "Comment added."
+    comment_placeholder: "A comment may be entered here."
     liked: "Post liked."
     unliked: "Post unliked."
     num_comments:

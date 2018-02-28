@@ -16,3 +16,24 @@
   <%= comment.text_rendered(current_account) %>
 </article>
 <% end %>
+
+<form
+  method="POST"
+  action="<%= routes.path(:comment_create, post_id: post.id) %>"
+  class="comment-create"
+>
+  <input type="hidden" name="_csrf_token" value="<%= csrf_token %>"/>
+  <textarea
+    name="text"
+    rows="4"
+    placeholder="<%= I18n.t('post.comment_placeholder') %>"
+    required="true"
+  ></textarea>
+  <div>
+    <input
+      class="submit"
+      type="submit"
+      value="<%= post.v_internet? ? I18n.t('Comment to Internet') : I18n.t('Comment') %>"
+    />
+  </div>
+</form>
