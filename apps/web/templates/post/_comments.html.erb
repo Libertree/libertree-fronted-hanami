@@ -24,6 +24,7 @@
 >
   <input type="hidden" name="_csrf_token" value="<%= csrf_token %>"/>
   <textarea
+    aria-label="<%= I18n.t('post.new comment') %>"
     name="text"
     rows="4"
     placeholder="<%= I18n.t('post.comment_placeholder') %>"
