@@ -28,12 +28,28 @@ RSpec.describe Web::Views::Post::Show, type: :view do
     expect(rendered).to include text
   end
 
-  it 'has a link to like the post' do
-    expect(dom.at(%|a[href="/post-like/#{post.id}"]:contains("like")|)).not_to be_nil
+  context '[the current account has not liked the post]' do
+    it 'has a link to like the post' do
+      expect(dom.at(%|a[href="/post-like/#{post.id}"]:contains("like")|)).not_to be_nil
+    end
+
+    it 'does not have a link to unlike the post' do
+      expect(dom.at(%|a[href="/post-unlike/#{post.id}"]:contains("unlike")|)).to be_nil
+    end
   end
 
-  it 'has a link to unlike the post' do
-    expect(dom.at(%|a[href="/post-unlike/#{post.id}"]:contains("unlike")|)).not_to be_nil
+  context '[the current account has liked the post]' do
+    before do
+      FactoryBot.create(:post_like, post_id: post.id, member_id: account.member.id)
+    end
+
+    it 'has a link to unlike the post' do
+      expect(dom.at(%|a[href="/post-unlike/#{post.id}"]:contains("unlike")|)).not_to be_nil
+    end
+
+    it 'does not have a link to like the post' do
+      expect(dom.at(%|a[href="/post-like/#{post.id}"]:contains("like")|)).to be_nil
+    end
   end
 
   context '[the post has a comment]' do
