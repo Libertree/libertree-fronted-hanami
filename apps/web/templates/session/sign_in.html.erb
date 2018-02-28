@@ -1,7 +1,6 @@
 <form id="sign-in" action="/session" method="POST">
-<input type="hidden" name="_csrf_token" value="<%=csrf_token%>"/>
+  <input type="hidden" name="_csrf_token" value="<%=csrf_token%>"/>
   <label><%=I18n.t('Username')%> <input type="text" name="username"/></label>
-  <br/>
   <label><%=I18n.t('Password')%> <input type="password" name="password"/></label>
   <input type="submit" class="button-primary" value="<%= I18n.t('Sign In') %>"/>
 </form>

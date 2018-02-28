@@ -26,12 +26,5 @@ article.comment {
 form.comment-create {
   textarea {
     width: 95%;
-    padding: 0.5em;
-    border-radius: 4px;
-    border: 2px solid $very_light_secondary_colour;
-
-    &:focus {
-      @include focus_defaults;
-    }
   }
 }

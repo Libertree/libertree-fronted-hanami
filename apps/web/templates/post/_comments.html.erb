@@ -23,19 +23,19 @@
   class="comment-create"
 >
   <input type="hidden" name="_csrf_token" value="<%= csrf_token %>"/>
-  <label for="new-comment-on-post-<%= post.id %>"><%= I18n.t('post.New comment') %></label>
-  <textarea
-    id="new-comment-on-post-<%= post.id %>"
-    name="text"
-    rows="4"
-    placeholder="<%= I18n.t('post.comment_placeholder') %>"
-    required="true"
-  ></textarea>
-  <div>
-    <input
-      class="button-primary"
-      type="submit"
-      value="<%= post.v_internet? ? I18n.t('Comment to Internet') : I18n.t('Comment') %>"
-    />
-  </div>
+  <label for="new-comment-on-post-<%= post.id %>">
+    <%= I18n.t('post.New comment') %>
+    <textarea
+      id="new-comment-on-post-<%= post.id %>"
+      name="text"
+      rows="3"
+      placeholder="<%= I18n.t('post.comment_placeholder') %>"
+      required="true"
+    ></textarea>
+  </label>
+  <input
+    class="button-primary"
+    type="submit"
+    value="<%= post.v_internet? ? I18n.t('Comment to Internet') : I18n.t('Comment') %>"
+  />
 </form>
