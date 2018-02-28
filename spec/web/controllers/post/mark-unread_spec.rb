@@ -1,0 +1,38 @@
+RSpec.describe Web::Controllers::Post::MarkUnread, type: :action do
+  let(:action) { described_class.new }
+  let(:params) { {} }
+  let(:call) { action.call(params) }
+
+  include_context '[signed in]' do
+    let(:current_account) { FactoryBot.create(:account) }
+
+    context '[a read post exists]' do
+      let(:post) {
+        FactoryBot.create(
+          :post,
+          member_id: current_account.member.id,
+        )
+      }
+      let(:params) { {post_id: post.id} }
+
+      before do
+        post.mark_as_read_by current_account
+      end
+
+      it 'marks the post as unread' do
+        expect {
+          call
+        }.to change {
+          post.read_by? current_account
+        }.from(true).to(false)
+      end
+
+      it 'redirects home' do
+        response = call
+
+        expect(response[0]).to eq 302
+        expect(response[1]['Location']).to eq '/home'
+      end
+    end
+  end
+end

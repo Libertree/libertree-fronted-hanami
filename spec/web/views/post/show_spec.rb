@@ -52,6 +52,10 @@ RSpec.describe Web::Views::Post::Show, type: :view do
     end
   end
 
+  it 'has a link to mark the post as unread' do
+    expect(dom.at(%|a[href="/post/mark-unread/#{post.id}"]:contains("mark unread")|)).not_to be_nil
+  end
+
   context '[the post has a comment]' do
     let!(:comment) {
       FactoryBot.create(

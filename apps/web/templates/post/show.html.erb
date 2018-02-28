@@ -16,6 +16,7 @@
       <% else %>
         <a href="<%= routes.path(:post_like, post_id: post.id) %>" title="like this post">like</a>
       <% end %>
+      <a href="<%= routes.path(:post_mark_unread, post_id: post.id) %>" title="mark this post as unread">mark unread</a>
     </div>
   </header>
 
