@@ -40,5 +40,9 @@ article.post {
   &> .comments {
     background-color: $faint_primary_colour;
     padding: 1.5em;
+
+    img {
+      max-width: 100%;
+    }
   }
 }
