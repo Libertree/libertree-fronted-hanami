@@ -9,6 +9,7 @@ gem 'nokogiri', '~> 1.8.2'
 gem 'pg', '~> 1.0.0'
 gem 'rake', '~> 12.3.0'
 gem 'sass', '~> 3.5.5'
+gem 'thin', '~> 1.7.2'
 
 group :development do
   # Code reloading
@@ -26,8 +27,4 @@ group :test do
   gem 'database_cleaner', '~> 1.6.2'
   gem 'factory_bot', '~> 4.8.2'
   gem 'rspec', '~> 3.7.0'
-end
-
-group :production do
-  # gem 'puma'
 end
