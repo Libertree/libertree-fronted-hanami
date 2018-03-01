@@ -11,3 +11,5 @@ get '/post-unlike/:post_id', to: 'post-like#delete', as: :post_unlike
 get '/session/sign-in', to: 'session#sign_in', as: :sign_in
 get '/session/sign-out', to: 'session#sign-out', as: :sign_out
 post '/session', to: 'session#create'
+
+redirect '/', to: '/home'
