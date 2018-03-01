@@ -21,6 +21,10 @@ article.post {
     .post-tools {
       margin: 0;
       flex-grow: 1;
+
+      a {
+        margin-right: 0.5em;
+      }
     }
   }
 
