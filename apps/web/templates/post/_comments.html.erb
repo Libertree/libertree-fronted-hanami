@@ -11,6 +11,13 @@
         <time datetime="<%= comment.time_created %>"><%= ago(comment.time_created) %></time>
       </div>
     </address>
+    <div class="comment-tools">
+      <% if comment.like_by(current_account.member) %>
+        <a href="<%= routes.path(:comment_unlike, comment_id: comment.id) %>" title="unlike this comment">unlike</a>
+      <% else %>
+        <a href="<%= routes.path(:comment_like, comment_id: comment.id) %>" title="like this comment">like</a>
+      <% end %>
+    </div>
   </header>
 
   <%= comment.text_rendered(current_account) %>
