@@ -7,7 +7,7 @@ module Web::Controllers::Post
         Libertree::Model::Post[ params[:post_id].to_i ]  ||
         Libertree::Model::NilPost.new
       )
-      next_post = current_account.home_river&.latest_unread
+      next_post = current_account.home_river.latest_unread(earlier_than_post: post)
 
       post.mark_as_unread_by current_account
 
