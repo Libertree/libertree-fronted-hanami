@@ -1,8 +1,30 @@
 <h1>Home</h1>
 
-<p>
-  <%= num_unread %> unread posts
-</p>
-<p>
-  <a href="<%= routes.path(:post_latest_unread) %>">begin reading unread posts</a>
-</p>
+<section>
+  <h2>Posts</h2>
+  <p>
+    <%= num_unread %> unread posts
+  </p>
+  <p>
+    <a href="<%= routes.path(:post_latest_unread) %>">begin reading unread posts</a>
+  </p>
+</section>
+
+<section>
+  <h2>Notifications</h2>
+  <p>
+    <%= num_notifications_unseen %> unseen notifications
+  </p>
+  <ul>
+    <% notifications_unseen_grouped.each do |group| %>
+      <li>
+        <%=
+        render(
+          partial: 'home/notification-group',
+          locals: { group: group, }
+        )
+        %>
+      </li>
+    <% end %>
+  </ul>
+</section>

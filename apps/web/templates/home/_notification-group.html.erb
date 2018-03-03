@@ -1,0 +1,24 @@
+<% case group.type %>
+<% when 'comment' %>
+  <%= group.actor_list %> commented on <%= group.context.actor.name_display %>'s post.
+<% when 'comment-like' %>
+  <%= group.actor_list %>
+  liked your comment ("<%= group.subject.glimpse %>")
+  on <%= group.context.post.actor.name_display %>'s post.
+<% when 'direct-message' %>
+  <%= group.actor_list %>
+  sent you a message. ("<%= group.subject.glimpse %>")
+<% when 'group-post' %>
+  <%= group.actor_list %>
+  posted to the group "<%= group.subject.name_display %>"
+  ("<%= group.subject.glimpse %>").
+<% when 'pool-post' %>
+  <%= group.actor_list %>
+  added your message to a spring called "<%= group.subject.glimpse %>".
+<% when 'post-like' %>
+  <%= group.actor_list %>
+  liked your post ("<%= group.context.glimpse %>").
+<% when 'mention-in-post' %>
+  <%= group.actor_list %>
+  mentioned you in a post. ("<%= group.subject.glimpse %>")
+<% end %>
