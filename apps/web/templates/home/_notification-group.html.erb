@@ -3,13 +3,16 @@
 <div class="notification">
 <% case group.type %>
 <% when 'comment' %>
-  <%= group.actor_list %> commented on
+  <%= group.actor_list %>
+  <%= link_to_comment(group.subject, link_text: 'commented') %>
+  on
   <%=
   group.context.actor == current_account.member ?
   'your' :
   group.context.actor.name_display + "'s"
   %>
-  <%= link_to_post(group.context) %>
+  post.
+  (<%= group.context.glimpse %>)
 <% when 'comment-like' %>
   <%= group.actor_list %>
   liked your
