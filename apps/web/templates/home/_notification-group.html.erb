@@ -5,7 +5,7 @@
   <%= group.actor_list %>
   liked <%= group.context.actor.name_display %>'s comment ("<%= group.context.glimpse %>")
   on <%= group.context.post.actor.name_display %>'s post.
-<% when 'direct-message' %>
+<% when 'message' %>
   <%= group.actor_list %>
   sent you a message. ("<%= group.subject.glimpse %>")
 <% when 'group-post' %>
