@@ -23,5 +23,9 @@ module Libertree
     def subject
       @notifications[0].subject
     end
+
+    def time_created
+      @notifications[0].time_created
+    end
   end
 end

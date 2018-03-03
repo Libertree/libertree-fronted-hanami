@@ -1,3 +1,6 @@
+<%= stylesheet 'notification' %>
+
+<div class="notification">
 <% case group.type %>
 <% when 'comment' %>
   <%= group.actor_list %> commented on <%= group.context.actor.name_display %>'s post.
@@ -5,20 +8,23 @@
   <%= group.actor_list %>
   liked <%= group.context.actor.name_display %>'s comment ("<%= group.context.glimpse %>")
   on <%= group.context.post.actor.name_display %>'s post.
-<% when 'message' %>
-  <%= group.actor_list %>
-  sent you a message. ("<%= group.subject.glimpse %>")
 <% when 'group-post' %>
   <%= group.actor_list %>
-  posted to the group "<%= group.subject.name_display %>"
+  posted to the group "<%= group.context.name_display %>"
   ("<%= group.subject.glimpse %>").
-<% when 'pool-post' %>
-  <%= group.actor_list %>
-  added your message to a spring called "<%= group.subject.glimpse %>".
-<% when 'post-like' %>
-  <%= group.actor_list %>
-  liked <%= group.context.actor.name_display %>'s post ("<%= group.context.glimpse %>").
 <% when 'mention-in-post' %>
   <%= group.actor_list %>
   mentioned you in a post. ("<%= group.subject.glimpse %>")
+<% when 'message' %>
+  <%= group.actor_list %>
+  sent you a message. ("<%= group.subject.glimpse %>")
+<% when 'post-like' %>
+  <%= group.actor_list %>
+  liked <%= group.context.actor.name_display %>'s post ("<%= group.context.glimpse %>").
+<% when 'springing' %>
+  <%= group.actor_list %>
+  added your post to a spring called "<%= CGI.escape_html(group.subject.pool.name) %>".
+  ("<%= group.subject.post.glimpse %>")
 <% end %>
+<time datetime="<%= group.time_created %>"><%= ago(group.time_created) %></time>
+</div>
