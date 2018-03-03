@@ -276,6 +276,7 @@ module Web
         include Hanami::Helpers
         include Web::Assets::Helpers
         include Web::Helpers::Age
+        include Web::Helpers::Link
       end
     end
 

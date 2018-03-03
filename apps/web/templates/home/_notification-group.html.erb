@@ -8,31 +8,42 @@
   group.context.actor == current_account.member ?
   'your' :
   group.context.actor.name_display + "'s"
-  %> post.
+  %>
+  <%= link_to_post(group.context) %>
 <% when 'comment-like' %>
   <%= group.actor_list %>
-  liked your comment ("<%= group.context.glimpse %>") on
+  liked your
+  <%= link_to_comment(group.context) %>
+  ("<%= group.context.glimpse %>") on
   <%=
   group.context.post.actor == current_account.member ?
   'your' :
   group.context.post.actor.name_display + "'s"
-  %> post.
+  %>
+  <%= link_to_post(group.context.post) %>.
 <% when 'group-post' %>
   <%= group.actor_list %>
-  posted to the group "<%= group.context.name_display %>"
+  <%= link_to_post(group.subject, link_text: 'posted') %>
+  to the group "<%= group.context.name_display %>"
   ("<%= group.subject.glimpse %>").
 <% when 'mention-in-post' %>
   <%= group.actor_list %>
-  mentioned you in a post. ("<%= group.subject.glimpse %>")
+  mentioned you in a
+  <%= link_to_post(group.subject) %>.
+  ("<%= group.subject.glimpse %>")
 <% when 'message' %>
   <%= group.actor_list %>
   sent you a message. ("<%= group.subject.glimpse %>")
 <% when 'post-like' %>
   <%= group.actor_list %>
-  liked your post ("<%= group.context.glimpse %>").
+  liked your
+  <%= link_to_post(group.context) %>
+  ("<%= group.context.glimpse %>").
 <% when 'springing' %>
   <%= group.actor_list %>
-  added your post to a spring called "<%= CGI.escape_html(group.subject.pool.name) %>".
+  added your
+  <%= link_to_post(group.subject) %>
+  to a spring called "<%= CGI.escape_html(group.subject.pool.name) %>".
   ("<%= group.subject.post.glimpse %>")
 <% end %>
 <time datetime="<%= group.time_created %>"><%= ago(group.time_created) %></time>
