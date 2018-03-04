@@ -21,7 +21,7 @@ module Libertree
     end
 
     def subject
-      @notifications[0].subject
+      @notifications.min { |n| n.subject.id }.subject
     end
 
     def time_created
