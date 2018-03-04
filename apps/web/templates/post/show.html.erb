@@ -4,7 +4,7 @@
   <ul>
     <li>
       <a
-        href="<%= routes.path(:post_latest_unread) %>"
+        href="<%= routes.path(:post_latest_unread, earlier_than_post_id: post.id) %>"
         title="read the latest unread post"
         accesskey="N"
       >next</a>
