@@ -156,3 +156,10 @@ form {
     }
   }
 }
+
+blockquote {
+  border-left: 3px solid $lighter_secondary_colour;
+  margin-left: 0;
+  padding-left: 1em;
+  font-style: italic;
+}
