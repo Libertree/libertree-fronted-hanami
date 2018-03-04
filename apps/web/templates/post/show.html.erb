@@ -6,12 +6,14 @@
       <a
         href="<%= routes.path(:post_latest_unread) %>"
         title="read the latest unread post"
+        accesskey="N"
       >next</a>
     </li>
     <li>
       <a
         href="<%= routes.path(:post_mark_unread, post_id: post.id) %>"
         title="mark this post as unread and go to next"
+        accesskey="L"
       >read later</a>
     </li>
     <li>
