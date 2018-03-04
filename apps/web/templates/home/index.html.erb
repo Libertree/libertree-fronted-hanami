@@ -1,16 +1,6 @@
 <h1>Home</h1>
 
 <section>
-  <h2>Posts</h2>
-  <p>
-    <%= num_unread %> unread posts
-  </p>
-  <p>
-    <a href="<%= routes.path(:post_latest_unread) %>">begin reading unread posts</a>
-  </p>
-</section>
-
-<section>
   <h2>Notifications</h2>
   <p>
     <%= num_notifications_unseen %> unseen notifications
@@ -27,4 +17,14 @@
       </li>
     <% end %>
   </ul>
+</section>
+
+<section>
+  <h2>Posts</h2>
+  <p>
+    <%= num_unread %> unread posts
+  </p>
+  <p>
+    <a href="<%= routes.path(:post_latest_unread) %>">begin reading unread posts</a>
+  </p>
 </section>

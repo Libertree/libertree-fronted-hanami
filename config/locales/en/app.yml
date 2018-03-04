@@ -21,7 +21,7 @@ en:
   post:
     comment_added: "Comment added."
     comment_placeholder: "A comment may be entered here."
-    "Could not display post.": "Could not display post."
+    could_not_display: "Could not display post."
     liked: "Post liked."
     "New comment": "New comment"
     unliked: "Post unliked."

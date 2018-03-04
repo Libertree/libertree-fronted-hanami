@@ -1,5 +1,28 @@
 <%= stylesheet 'post' %>
 
+<nav id="nav-post" aria-label="Post Navigation">
+  <ul>
+    <li>
+      <a
+        href="<%= routes.path(:post_latest_unread) %>"
+        title="read the latest unread post"
+      >next</a>
+    </li>
+    <li>
+      <a
+        href="<%= routes.path(:post_mark_unread, post_id: post.id) %>"
+        title="mark this post as unread and go to next"
+      >read later</a>
+    </li>
+    <li>
+      <a
+        href="<%= routes.path(:post_mark_unread, post_id: post.id, go_home: true) %>"
+        title="mark this post as unread and return to home"
+      >stop reading</a>
+    </li>
+  </ul>
+</nav>
+
 <article class="post">
   <header>
     <address>
@@ -16,7 +39,6 @@
       <% else %>
         <a href="<%= routes.path(:post_like, post_id: post.id) %>" title="like this post">like</a>
       <% end %>
-      <a href="<%= routes.path(:post_mark_unread, post_id: post.id) %>" title="mark this post as unread">mark unread</a>
     </div>
   </header>
 

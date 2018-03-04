@@ -11,7 +11,11 @@ module Web::Controllers::Post
 
       post.mark_as_unread_by current_account
 
-      redirect_to routes.path(:post, id: next_post.id)
+      if params[:go_home]
+        redirect_to routes.path(:home)
+      else
+        redirect_to routes.path(:post, id: next_post.id)
+      end
     end
   end
 end

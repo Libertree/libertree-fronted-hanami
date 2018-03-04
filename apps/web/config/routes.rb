@@ -5,7 +5,7 @@ get '/comment/unlike/:comment_id', to: 'comment-like#delete', as: :comment_unlik
 
 post '/post/:post_id/comment', to: 'comment#create', as: :comment_create
 get '/post/latest-unread', to: 'post#latest-unread', as: :post_latest_unread
-get '/post/mark-unread/:post_id', to: 'post#mark-unread', as: :post_mark_unread
+get '/post/mark-unread/:post_id(/:go_home)', to: 'post#mark-unread', as: :post_mark_unread
 get '/post/:id', to: 'post#show', as: :post
 
 # TODO: Turn these into /post/like and /post/unlike
