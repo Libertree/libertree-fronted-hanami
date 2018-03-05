@@ -18,6 +18,9 @@ en:
   comment:
     liked: "Comment liked."
     unliked: "Comment unliked."
+    num_likes:
+      one: "1 like"
+      other: "%{count} likes"
   post:
     comment_added: "Comment added."
     comment_placeholder: "A comment may be entered here."
@@ -28,3 +31,6 @@ en:
     num_comments:
       one: "1 comment"
       other: "%{count} comments"
+    num_likes:
+      one: "1 like"
+      other: "%{count} likes"

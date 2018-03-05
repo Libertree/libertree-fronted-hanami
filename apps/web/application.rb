@@ -277,6 +277,7 @@ module Web
         include Web::Assets::Helpers
         include Web::Helpers::Age
         include Web::Helpers::Link
+        include Web::Helpers::Likes
       end
     end
 

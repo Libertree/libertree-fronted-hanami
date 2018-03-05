@@ -34,6 +34,7 @@
       </div>
       <div class="post-stats">
         <time datetime="<%= post.time_created %>"><%= ago(post.time_created) %></time>
+        <%= post_likes(post: post) %>
       </div>
     </address>
     <div class="post-tools">
@@ -50,7 +51,7 @@
   </div>
 
   <div class="comments">
-    <div class="count"><%= I18n.t('post.num_comments', count: post.comments.count) %></div>
+    <div class="count"><%= comment_count %></div>
     <%= render partial: 'post/comments', locals: { post: post } %>
   </div>
 </article>

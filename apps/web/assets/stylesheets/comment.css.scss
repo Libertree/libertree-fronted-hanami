@@ -19,6 +19,10 @@ article.comment {
       .member-name {
         font-weight: bold;
       }
+
+      .comment-stats > * {
+        margin-right: 1em;
+      }
     }
   }
 }

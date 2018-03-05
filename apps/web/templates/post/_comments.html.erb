@@ -9,6 +9,7 @@
       </div>
       <div class="comment-stats">
         <time datetime="<%= comment.time_created %>"><%= ago(comment.time_created) %></time>
+        <%= comment_likes(comment: comment) %>
       </div>
     </address>
     <div class="comment-tools">
