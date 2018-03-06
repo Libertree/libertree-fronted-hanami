@@ -49,5 +49,8 @@
   to a spring called "<%= CGI.escape_html(group.subject.pool.name) %>".
   ("<%= group.subject.post.glimpse %>")
 <% end %>
-<time datetime="<%= group.time_created %>"><%= ago(group.time_created) %></time>
+<div>
+  <time datetime="<%= group.time_created %>"><%= ago(group.time_created) %></time>
+  <a href="<%= routes.path(:notification_mark_seen, notification_ids: group.notification_id_list) %>">mark as seen</a>
+</div>
 </div>

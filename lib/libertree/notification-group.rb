@@ -28,8 +28,8 @@ module Libertree
       @notifications[0].time_created
     end
 
-    def notification_ids
-      @notifications.map(&:id)
+    def notification_id_list
+      @notifications.map(&:id).join(',')
     end
   end
 end
