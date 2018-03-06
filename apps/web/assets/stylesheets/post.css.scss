@@ -1,8 +1,6 @@
 @import 'colours.css.scss';
-@import 'constrained-text-block.css.scss';
-#nav-post {
-  @include constrained_text_block;
 
+#nav-post {
   margin-bottom: 1em;
 
   ul {

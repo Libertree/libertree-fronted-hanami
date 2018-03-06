@@ -74,14 +74,11 @@ body {
 
 main {
   padding: 2rem;
+  @include constrained_text_block;
 
   :first-child {
     margin-top: 0;
   }
-}
-
-article {
-  @include constrained_text_block;
 }
 
 article :first-child {
