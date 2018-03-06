@@ -3,8 +3,8 @@ get '/home', to: 'home#index', as: :home
 get '/comment/like/:comment_id', to: 'comment-like#create', as: :comment_like
 get '/comment/unlike/:comment_id', to: 'comment-like#delete', as: :comment_unlike
 
-get '/notification/:notification_id/mark-seen', to: 'notification#mark-seen', as: :notification_mark_seen
-get '/notification/:notification_id/mark-unseen', to: 'notification#mark-unseen', as: :notification_mark_unseen
+get '/notification/mark-seen/:notification_ids', to: 'notification#mark-seen', as: :notification_mark_seen
+get '/notification/mark-unseen/:notification_ids', to: 'notification#mark-unseen', as: :notification_mark_unseen
 
 post '/post/:post_id/comment', to: 'comment#create', as: :comment_create
 get '/post/latest-unread(/:earlier_than_post_id)', to: 'post#latest-unread', as: :post_latest_unread

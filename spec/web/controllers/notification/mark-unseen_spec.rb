@@ -15,7 +15,7 @@ RSpec.describe Web::Controllers::Notification::MarkUnseen, type: :action do
           seen: true,
         )
       }
-      let(:params) { {notification_id: notification.id} }
+      let(:params) { {notification_ids: notification.id} }
 
       it 'marks the notification as unseen' do
         expect {
@@ -28,7 +28,7 @@ RSpec.describe Web::Controllers::Notification::MarkUnseen, type: :action do
       context '[referrer set]' do
         let(:params) {
           {
-            notification_id: notification.id,
+            notification_ids: notification.id,
             'Referer' => 'foobar',
           }
         }

@@ -27,5 +27,9 @@ module Libertree
     def time_created
       @notifications[0].time_created
     end
+
+    def notification_ids
+      @notifications.map(&:id)
+    end
   end
 end
